@@ -1,0 +1,69 @@
+@import "../../../styles/responsive.scss";
+.home_page_main {
+  display: flex;
+  justify-content: center;
+  @include responsive($ziro) {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    align-items: start;
+  }
+  @include responsive($google) {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(240, 244, 249);
+    align-items: center;
+  }
+  .form {
+    width: 100%;
+    max-width: 926px;
+    height: auto;
+    overflow: auto;
+    .main_form {
+      width: 100%;
+      height: auto;
+      border-radius: 32px;
+      background-color: #ffffff;
+      padding: 2.25rem;
+      .google_svg {
+        width: 100%;
+        height: 48px;
+        svg {
+          width: 48px;
+          height: 48px;
+        }
+      }
+      .main_dtail_div {
+        width: 100%;
+        height: auto;
+        margin-top: 1.563rem;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: start;
+        row-gap: 1.563rem;
+        .sign_word_div {
+          @include responsive($ziro) {
+            width: 100%;
+          }
+          @include responsive($tablet) {
+            width: 50%;
+          }
+          height: auto;
+        }
+        .input_div{
+            @include responsive($ziro){
+                width: 100%;
+
+            }
+            @include responsive($tablet){
+                width: 50%;
+
+            }
+            height: 50px;
+            background-color: blue;
+        }
+      }
+    }
+  }
+}

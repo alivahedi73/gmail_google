@@ -1,5 +1,10 @@
+import Pages from "./pages/Pages";
 const App = () => {
-  return ( <></> );
-}
- 
+  return (
+    <>
+      <Pages />
+    </>
+  );
+};
+
 export default App;
