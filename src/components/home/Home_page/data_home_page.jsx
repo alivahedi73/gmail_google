@@ -24,3 +24,13 @@ export const google_svg = (
     <path d="M1 1h22v22H1z" fill="none" />
   </svg>
 );
+export const languge = [
+  {
+    id: 1,
+    name: "English (United States)",
+  },
+  {
+    id: 2,
+    name: "Français (France)",
+  },
+];

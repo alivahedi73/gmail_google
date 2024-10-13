@@ -1,10 +1,12 @@
 import "./Home_page.scss";
-import { google_svg } from "./data_home_page";
+import { google_svg, languge } from "./data_home_page";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import { FaAngleDown } from "react-icons/fa";
 const Home_page = () => {
-  let [click,setClick]=React.useState(false)
+  let [click, setClick] = React.useState(false);
+  let [clicklan, setClicklan] = React.useState([1, languge[0].name]);
   return (
     <>
       <div className="home_page_main">
@@ -42,8 +44,35 @@ const Home_page = () => {
           </div>
         </div>
         <div className="navbar_google">
-          <div className="navbar_google_langugeProcess">
-
+          <div
+            className={`navbar_google_langugeProcess ${
+              click ? "opened" : null
+            }`}
+            onClick={() => setClick(!click)}
+          >
+            <p>{clicklan[1]}</p>
+            <FaAngleDown
+              style={
+                click
+                  ? { transform: "rotate(180deg)" }
+                  : { transform: "rotate(0)" }
+              }
+            />
+            <div className={`choise_class ${click ? "open" : "close"}`}>
+              <div className={`choise_main ${click ? "open" : "close"}`}>
+                {languge.map((item, index) => {
+                  return (
+                    <div
+                      className="languge_choise"
+                      key={index}
+                      onClick={() => setClicklan([item.id, item.name])}
+                    >
+                      {item.name}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
           <div className="navbar_google_Help">
             <a href="#">Help</a>
